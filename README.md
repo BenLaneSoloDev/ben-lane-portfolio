@@ -28,6 +28,9 @@ My portfolio showcasing projects in both game and software development.
 * **Typescript**
 * **React**
 * **Vite**
+* **React Router**
+* **Tailwind CSS**
+* **Shadcn/UI**
 
 ---
 
