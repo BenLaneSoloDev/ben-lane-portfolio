@@ -24,7 +24,10 @@ My portfolio showcasing projects in both game and software development.
 <a id="tech-stack"></a>
 ## 🛠️ Tech Stack & Resources
 
-* **TBA**
+* **CSS**
+* **Typescript**
+* **React**
+* **Vite**
 
 ---
 
