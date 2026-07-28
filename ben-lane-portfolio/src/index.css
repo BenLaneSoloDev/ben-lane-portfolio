@@ -44,6 +44,15 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+@theme {
+  --color-def-green: oklch(0.7024 0.1733 137.52);
+  --color-def-l-green: oklch(0.9106 0.1012 137.77);
+  --color-def-white: oklch(0.9748 0.0119 79.79);
+  --color-def-orange: oklch(0.8232 0.1582 76);
+  --color-def-grey: oklch(0.3705 0.0095 260.72);
+  --color-def-l-grey: oklch(0.6519 0.0101 258.35);
+}
+
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: 'Inter Variable', sans-serif;
