@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui/separator";
 
 export default function Hero() {
   return (
-    <div className="flex flex-row gap-[4%]">
+    <div className="flex flex-row gap-[4%] p-10">
       <div className="flex-2">
         <AspectRatio ratio={1 / 1} className="w-full border-4 rounded-full overflow-clip border-amber-400 shadow-md/20">
           <img src="./src/assets/home/headshot.webp" alt="Headshot" className="object-cover object-center"></img>
