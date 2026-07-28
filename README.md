@@ -48,6 +48,7 @@ My portfolio showcasing projects in both game and software development.
 
 ## 📃 Credits
 
-* **TBA**
+* **Google Fonts:** Rubik
+* **Steve Schoger:** Hero Pattern BG - https://heropatterns.com/
 
 ---

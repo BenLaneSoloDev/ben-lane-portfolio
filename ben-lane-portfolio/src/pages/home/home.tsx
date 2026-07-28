@@ -1,7 +1,9 @@
+import Hero from "@/sections/home/hero.tsx";
+
 export default function Home () {
   return (
-    <>
-      <h1>Home Page</h1>
-    </>
+    <div className="p-10 def-background">
+      <Hero />
+    </div>
   );
 }
