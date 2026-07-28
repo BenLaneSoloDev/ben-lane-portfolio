@@ -19,7 +19,7 @@ export default function ProjectCarousel(props: CarouselProps) {
   const { total } = props;
 
   return (
-    <div className={`${styles.carousel}`}>
+    <div className={`${styles.carousel} bg-def-white border-2 border-def-orange`}>
       <div className={styles.group}>
         {Array.from({ length: total }).map((_, index) => (
           <div className={`${styles.card}`}>

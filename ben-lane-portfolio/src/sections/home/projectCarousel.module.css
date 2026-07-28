@@ -3,6 +3,9 @@
   margin-inline: -5%;
   display: flex;
   overflow-x: auto;
+  box-shadow:
+    0px -1px 5px var(--color-def-orange),
+    0px 1px 5px var(--color-def-orange);
 }
 
 .carousel::-webkit-scrollbar {
@@ -28,9 +31,9 @@
   border-width: 0.25rem;
   border-color: var(--color-def-l-grey);  
   filter: grayscale(100%);
-  transition: 
-    filter 0.5s ease,
-    border-color 0.5s ease;
+  /* transition: filter 0.5s ease, border-color 0.5s ease; */
+  filter: grayscale(0%);
+  border-color: var(--color-def-green);
 }
 
 .card img {
@@ -39,10 +42,12 @@
   object-fit: cover;
 }
 
+/*
 .card:hover {
   filter: grayscale(0%);
   border-color: var(--color-def-green);
 }
+*/  
 
 @keyframes spin {
   from {
