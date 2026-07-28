@@ -1,0 +1,16 @@
+.footer {
+  background-color: var(--color-def-l-green);
+  transition: background-color 0.5s ease;
+}
+
+.footer:hover {
+  background-color: var(--color-def-orange);
+}
+
+a {
+  transition: transform 0.25s ease;
+}
+
+a:hover {
+  transform: scale3d(1.2, 1.2, 1);
+}

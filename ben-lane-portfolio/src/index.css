@@ -51,6 +51,9 @@
   --color-def-orange: oklch(0.8232 0.1582 76);
   --color-def-grey: oklch(0.3705 0.0095 260.72);
   --color-def-l-grey: oklch(0.6519 0.0101 258.35);
+
+  --drop-shadow-subtle:
+    1px 1px 1px var(--color-def-l-grey);
 }
 
 @theme inline {

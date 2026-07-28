@@ -22,14 +22,14 @@ export default function ProjectCarousel(props: CarouselProps) {
     <div className={`${styles.carousel} bg-def-white border-2 border-def-orange`}>
       <div className={styles.group}>
         {Array.from({ length: total }).map((_, index) => (
-          <div className={`${styles.card}`}>
+          <div key={`ss${index + 1}-1`} className={`${styles.card}`}>
             <img src={`./src/assets/home/projectSS/${images[index]}.webp`} alt="Project Screenshot"></img>
           </div>
         ))}
       </div>
       <div aria-hidden className={`${styles.group}`}>
         {Array.from({ length: total }).map((_, index) => (
-          <div className={`${styles.card}`}>
+          <div key={`ss${index + 1}-2`} className={`${styles.card}`}>
             <img src={`./src/assets/home/projectSS/${images[index]}.webp`} alt="Project Screenshot"></img>
           </div>
         ))}
