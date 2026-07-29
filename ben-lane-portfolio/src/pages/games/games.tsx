@@ -1,7 +1,9 @@
+import ProjectList from "@/sections/games/projects/projectList.tsx"
+
 export default function Games () {
   return (
-    <>
-      <h1>Game Dev Page</h1>
-    </>
+    <div className="flex flex-col min-h-dvh overflow-hidden justify-center def-background">
+      <ProjectList />
+    </div>
   );
 }
