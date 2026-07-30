@@ -2,7 +2,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button.tsx";
 
-import styles from "./hero.module.css";
+import buttonStyles from "@/utilities/css/button.module.css";
 
 import { useNavigate } from "react-router";
 
@@ -25,9 +25,9 @@ export default function Hero() {
           <p className="text-def-grey">I am a gameplay programmer graduate with 4 years of experience. I am driven by my enjoyment of new and fun gameplay mechanics, whether its designing combat systems, developing unique player interactions or refining movement. All of this done with my keen eye for detail and care for the users experience.</p>
         </div>
         <div className="flex flex-col gap-4">
-          <div className="flex flex-row justify-center gap-4">
-            <Button onClick={() => {navigate("/software-dev")}} className={`${styles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Software Development</Button>
-            <Button onClick={() => {navigate("/game-dev")}} className={`${styles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Games Development</Button>
+          <div className="flex flex-row justify-center gap-8">
+            <Button onClick={() => {navigate("/software-dev")}} className={`${buttonStyles.button} ${buttonStyles.highlight} flex-1 max-w-70 p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Software Development</Button>
+            <Button onClick={() => {navigate("/game-dev")}} className={`${buttonStyles.button} ${buttonStyles.highlight} flex-1 max-w-70 p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Games Development</Button>
           </div>
         </div>
       </div>

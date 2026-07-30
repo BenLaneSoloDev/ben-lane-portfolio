@@ -1,4 +1,4 @@
-.button {
+.highlight {
   box-shadow: var(--drop-shadow-subtle);
   transition: 
     border-color 0.5s ease,
@@ -6,9 +6,18 @@
     box-shadow 0.5s ease;
 }
 
-.button:hover {
+.highlight:hover {
   border-color: var(--color-def-l-green);
   background-color: var(--color-def-white);
   box-shadow: var(--drop-shadow-green);
   color: var(--color-def-grey)
+}
+
+.button {
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.button:hover {
+  transform: scale3d(1.2, 1.2, 1);
 }

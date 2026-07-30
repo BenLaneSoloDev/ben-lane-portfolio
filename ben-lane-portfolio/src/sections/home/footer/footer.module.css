@@ -6,11 +6,3 @@
 .footer:hover {
   background-color: var(--color-def-orange);
 }
-
-a {
-  transition: transform 0.25s ease;
-}
-
-a:hover {
-  transform: scale3d(1.2, 1.2, 1);
-}
