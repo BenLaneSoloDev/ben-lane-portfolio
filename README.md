@@ -31,6 +31,7 @@ My portfolio showcasing projects in both game and software development.
 * **React Router**
 * **Tailwind CSS**
 * **Shadcn/UI**
+* **Radix UI**
 
 ---
 

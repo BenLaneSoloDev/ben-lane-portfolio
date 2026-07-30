@@ -3,7 +3,7 @@ export interface ProjectObj {
   featured: boolean,
   title: string,
   subtitle?: string,
-  description: string,
+  description: string[],
   status: string,
   tags: string[],
   githubLink?: string,

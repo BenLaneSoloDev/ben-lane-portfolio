@@ -1,4 +1,4 @@
-import ProjectList from "@/sections/games/projects/projectList.tsx"
+import ProjectList from "@/sections/projects/projectList"
 
 export default function Games () {
   return (

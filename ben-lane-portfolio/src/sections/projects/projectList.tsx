@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Project from "@/sections/games/projects/project.tsx";
+import Project from "@/sections/projects/project";
 import type { ProjectObj } from "./projectObj";
 
 export default function ProjectList() {
@@ -32,7 +32,7 @@ export default function ProjectList() {
   if (projects.length <= 0) return <div>No Projects To Load</div>;
 
   return (
-    <div className="flex flex-col m-4">
+    <div className="flex flex-col m-10 gap-10">
       {projects.map((project) => (
       <Project key={project.id} {...project} />
     ))}

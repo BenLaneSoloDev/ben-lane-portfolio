@@ -54,6 +54,8 @@
 
   --drop-shadow-subtle:
     1px 1px 1px var(--color-def-l-grey);
+  --drop-shadow-green: 
+    2px 2px 4px var(--color-def-green);
 }
 
 @theme inline {
