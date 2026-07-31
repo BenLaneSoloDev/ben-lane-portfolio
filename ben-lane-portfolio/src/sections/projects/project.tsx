@@ -49,14 +49,14 @@ export default function Project(props: ProjectObj) {
           <p key={`desc${index}`}>{paragraph}</p>
         ))}
         <div className="flex flex-row gap-4 items-center">
-          {githubLink && <Button className={`${buttonStyles.button} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" render={<a href={githubLink}></a>}>Github</Button>}
-          {liveLink && <Button className={`${buttonStyles.button} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" render={<a href={liveLink}></a>}>Try It Out</Button>} 
+          {githubLink && <Button className={`${buttonStyles.button} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={githubLink} target="_blank"></a>}>Github</Button>}
+          {liveLink && <Button className={`${buttonStyles.button} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={liveLink} target="_blank"></a>}>Try It Out</Button>} 
         </div>
         <div className="flex flex-row flex-wrap gap-1 items-center">
           <Badge className={`${buttonStyles.highlight} font-normal`}>{validStatus.some(s => s === status.toLowerCase()) ? capitaliseString(status) : "Completed"}</Badge>
           <span className="drop-shadow-subtle">|</span>
-          {tags.map((tag) => (
-            <Badge className={`${buttonStyles.highlight} font-normal text-def-grey`} variant="outline">{capitaliseString(tag)}</Badge>
+          {tags.map((tag, index) => (
+            <Badge key={`t${index}`} className={`${buttonStyles.highlight} font-normal text-def-grey`} variant="outline">{capitaliseString(tag)}</Badge>
           ))}
         </div>
       </div>

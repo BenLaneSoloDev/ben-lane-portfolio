@@ -2,7 +2,8 @@
   box-shadow: var(--drop-shadow-subtle);
   transition: 
     border-color 0.5s ease,
-    background-color 0.5s ease
+    background-color 0.5s ease,
+    color 0.5s ease,
     box-shadow 0.5s ease;
 }
 
@@ -11,6 +12,22 @@
   background-color: var(--color-def-white);
   box-shadow: var(--drop-shadow-green);
   color: var(--color-def-grey)
+}
+
+.highlightToggle {
+  box-shadow: var(--drop-shadow-subtle);
+  background-color: var(--color-def-green);  
+  color: var(--color-def-white);
+  transition: 
+    border-color 0.5s ease,
+    color 0.5s ease,
+    box-shadow 0.5s ease,
+    background-color 0.5s ease ;
+}
+
+.highlightToggle:hover {
+  border-color: var(--color-def-white);
+  box-shadow: var(--drop-shadow-green);
 }
 
 .button {
