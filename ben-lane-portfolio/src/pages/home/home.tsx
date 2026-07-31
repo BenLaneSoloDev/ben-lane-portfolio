@@ -1,6 +1,6 @@
 import Hero from "@/sections/home/hero/hero.tsx";
 import ProjectCarousel from "@/sections/home/projectCarousel/projectCarousel.tsx";
-import Footer from "@/sections/home/footer/footer.tsx";
+import Footer from "@/sections/footer/footer";
 
 export default function Home () {
   return (
