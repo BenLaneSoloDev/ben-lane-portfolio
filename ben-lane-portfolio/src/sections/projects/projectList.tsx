@@ -1,4 +1,4 @@
-import { useState, useEffect, act } from "react";
+import { useState, useEffect } from "react";
 import Project from "@/sections/projects/project";
 import type { ProjectObj } from "./projectObj";
 import { Badge } from "@/components/ui/badge";
@@ -19,7 +19,7 @@ export default function ProjectList() {
   const [activeProjects, setActiveProjects] = useState<boolean[]>([]);
 
   function toggleTag(tagIndex: number): void {
-    const newActivity = activeTags.map((currentTag, index) => {
+    const newActivity = activeTags.map((_currentTag, index) => {
       if (tagIndex === index) {
         return !activeTags[index];
       }
