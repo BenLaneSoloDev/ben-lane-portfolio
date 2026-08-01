@@ -30,11 +30,15 @@
   box-shadow: var(--drop-shadow-green);
 }
 
-.button {
+.button, .button-s {
   cursor: pointer;
   transition: transform 0.25s ease;
 }
 
 .button:hover {
   transform: scale3d(1.2, 1.2, 1);
+}
+
+.button-s:hover {
+  transform: scale3d(1.1, 1.1, 1);
 }

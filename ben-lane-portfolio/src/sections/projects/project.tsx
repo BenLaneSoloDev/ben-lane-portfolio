@@ -26,13 +26,11 @@ export default function Project(props: ProjectObj) {
   return (
     <div className="flex flex-row flex-wrap items-center p-6 gap-6 rounded-4xl font-light text-def-grey bg-def-white border-3 border-def-orange shadow-md/20">
       <div className="flex flex-col flex-1 gap-2">
-
         <div className="">
           <h2 className="ml-2 text-lg">
             <strong className="text-xl">{title}</strong> | {subtitle}
           </h2>
         </div>
-      
         <div className="">
           <iframe className="aspect-video rounded-2xl drop-shadow-green border-def-l-green border-2" 
           src={videoUrl}
@@ -41,9 +39,7 @@ export default function Project(props: ProjectObj) {
           allowFullScreen
           loading="lazy"/>
         </div>
-
       </div>
-
       <div className="flex flex-col flex-1 gap-4 text-base">
         {description.map((paragraph, index) => (
           <p key={`desc${index}`}>{paragraph}</p>

@@ -10,6 +10,10 @@ import { capitaliseString } from "@/utilities/ts/capitaliseString";
 
 import buttonStyles from "@/utilities/css/button.module.css";
 
+
+// TODO: Make projects Image tiles that take user to another page for each project.
+// TODO: ADD Featured tag to projects
+
 export default function ProjectList() {
 
   const [projects, setProjects] = useState<ProjectObj[]>([]);
@@ -99,9 +103,9 @@ export default function ProjectList() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col items-center bg-def-white p-4 rounded-b-xl border-b-4 border-b-def-green border-t-2 border-t-def-l-green drop-shadow-subtle">
+      <div className="flex flex-col items-center bg-def-white p-4 border-b-4 border-b-def-green border-t-2 border-t-def-l-green drop-shadow-subtle">
       <h2 className="mb-4 text-def-grey font-semibold uppercase drop-shadow-subtle">Filter By Skill</h2>
-      <div className="flex flex-row flex-wrap gap-1 items-center justify-center">
+      <div className="flex flex-row flex-wrap gap-1 items-center justify-center mx-[30%]">
         {uniqueTags.map((tag, index) => (
           <Badge key={`t${index}`} onClick={() => {toggleTag(index)}} className={(activeTags[index] ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` font-normal text-def-grey cursor-pointer`} variant="outline">{capitaliseString(tag)}</Badge>
         ))}
