@@ -1,22 +1,19 @@
 import { useState, useEffect } from "react";
 import Project from "@/sections/projects/project";
-import type { ProjectObj } from "./projectObj";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button.tsx";
 import Footer from "@/sections/footer/footer";
+import type { ProjectObj } from "./projectObj.ts";
 
-import { combineStringArrays } from "@/utilities/ts/combineArrays";
 import { capitaliseString } from "@/utilities/ts/capitaliseString";
+import { combineStringArrays } from "@/utilities/ts/combineArrays";
 
 import buttonStyles from "@/utilities/css/button.module.css";
 
+export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
 
-// TODO: Make projects Image tiles that take user to another page for each project.
-// TODO: ADD Featured tag to projects
+  if (projects.length <= 0) return <div>No Projects To Load</div>;
 
-export default function ProjectList() {
-
-  const [projects, setProjects] = useState<ProjectObj[]>([]);
   const [uniqueTags, setUniqueTags] = useState<string[]>([]);
   const [activeTags, setActiveTags] = useState<string[]>([]);
 
@@ -29,60 +26,35 @@ export default function ProjectList() {
   const clearSkills = () => setActiveTags([]);
 
   useEffect(() => {
-  
-    async function loadProjects() {
-      try {
-        
-        const response = await fetch("/projects.json");
+    let allTags: string[] = [];
+    projects.forEach((project) => { allTags = [...allTags, ...project.tags]; });
+    setUniqueTags(combineStringArrays(true, allTags));
+  }, [])
 
-        if (!response.ok) {
-          throw new Error(`Failed to load data: ${response.status}`);
-        }
-
-        const data: ProjectObj[] = await response.json();
-        setProjects(data);
-
-        let allTags: string[] = [];
-        data.forEach((project) => { allTags = [...allTags, ...project.tags]; });
-        setUniqueTags(combineStringArrays(true, allTags));
-
-        updateActiveProjects();
-
-      } catch (error) {
-        throw new Error(`Failed to access json file: ${error}`);
-      }
-    }
-
-    loadProjects();
-
-  }, []);
-
-  if (projects.length <= 0) return <div>No Projects To Load</div>;
-
-    return (
-      <div className="flex flex-col">
-        <div className="flex flex-col items-center bg-def-white p-4 border-b-4 border-b-def-green border-t-2 border-t-def-l-green drop-shadow-subtle">
-        <h2 className="mb-4 text-def-grey font-semibold uppercase drop-shadow-subtle">Filter By Skill</h2>
-        <div className="flex flex-row flex-wrap gap-1 items-center justify-center mx-[30%]">
-          {uniqueTags.map((tag, index) => {
-            const isActive = activeTags.includes(tag);
-            return (
-              <Badge key={`t${index}`} onClick={() => {toggleTag(tag)}} className={(isActive ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` font-normal text-def-grey cursor-pointer`} variant="outline">{capitaliseString(tag)}</Badge>
-          )})}
-        </div> 
-        <Button onClick={clearSkills} className={`${buttonStyles.button} ${buttonStyles.highlight} rounded-3xl mt-4 px-2 text-sm font-medium text-def-grey border-def-green border-2`} variant="outline">Clear</Button>
+  return (
+    <div className="flex flex-col">
+      <div className="flex flex-col items-center bg-def-white p-4 border-b-4 border-b-def-green border-t-2 border-t-def-l-green drop-shadow-subtle">
+      <h2 className="mb-4 text-def-grey font-semibold uppercase drop-shadow-subtle">Filter By Skill</h2>
+      <div className="flex flex-row flex-wrap gap-1 items-center justify-center mx-[30%]">
+        {uniqueTags.map((tag, index) => {
+          const isActive = activeTags.includes(tag);
+          return (
+            <Badge key={`t${index}`} onClick={() => {toggleTag(tag)}} className={(isActive ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` font-normal text-def-grey cursor-pointer`} variant="outline">{capitaliseString(tag)}</Badge>
+        )})}
+      </div> 
+      <Button onClick={clearSkills} className={`${buttonStyles.button} ${buttonStyles.highlight} rounded-3xl mt-4 px-2 text-sm font-medium text-def-grey border-def-green border-2`} variant="outline">Clear</Button>
+    </div>
+      <div className="flex flex-row flex-wrap justify-center mx-40 my-10 gap-10">
+        {projects.filter((project) => {
+          if (activeTags.length === 0) return true;
+          console.log(activeTags.length);
+          console.log(activeTags);
+          return project.tags.some((tag) => activeTags.includes(tag));
+        }).map((project, index) => (
+          <Project key={`p${index + 1}`} activeTags={activeTags} project={project} />
+        ))}
       </div>
-        <div className=" flex flex-col mx-40 my-10 gap-10">
-          {projects.filter((project) => {
-            if (activeTags.length === 0) return true;
-            console.log(activeTags.length);
-            console.log(activeTags);
-            return project.tags.some((tag) => activeTags.includes(tag));
-          }).map((project, index) => (
-            <Project key={`p${index + 1}`} activeTags={activeTags} project={project} />
-          ))}
-        </div>
-        <Footer />
-      </div>
-    );
+      <Footer />
+    </div>
+  );
 }
