@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 
 import buttonStyles from "@/utilities/css/button.module.css";
 
-export default function Hero() {
+export default function Hero({isHomePage} : {isHomePage: boolean}) {
 
   const navigate = useNavigate();
 
@@ -26,8 +26,12 @@ export default function Hero() {
       </div>
       <div className="flex flex-col gap-4">
         <div className="flex flex-row items-stretch justify-center gap-[4%] sm:gap-8">
-          <Button onClick={() => {navigate("/software-dev")}} className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} flex-1 whitespace-normal h-auto p-[2%] md:p-2 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Software Development</Button>
-          <Button onClick={() => {navigate("/game-dev")}} className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} flex-1 whitespace-normal h-auto p-[2%] md:p-2 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Games Development</Button>
+          {isHomePage &&
+            <>
+              <Button onClick={() => {navigate("/software-dev")}} className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} flex-1 whitespace-normal h-auto p-[2%] md:p-2 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Software Development</Button>
+              <Button onClick={() => {navigate("/game-dev")}} className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} flex-1 whitespace-normal h-auto p-[2%] md:p-2 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Games Development</Button>
+            </>
+          }
         </div>
       </div>
     </div>

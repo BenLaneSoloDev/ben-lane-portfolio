@@ -57,12 +57,6 @@ export default function ProjectList() {
 
   }, []);
 
-  useEffect(() => {
-    let initialTagActivity: boolean[] = [];
-    uniqueTags.forEach(() => { initialTagActivity.push(false); })
-    setActiveTags(initialTagActivity);
-  }, [uniqueTags]);
-
   if (projects.length <= 0) return <div>No Projects To Load</div>;
 
     return (
@@ -76,11 +70,13 @@ export default function ProjectList() {
               <Badge key={`t${index}`} onClick={() => {toggleTag(tag)}} className={(isActive ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` font-normal text-def-grey cursor-pointer`} variant="outline">{capitaliseString(tag)}</Badge>
           )})}
         </div> 
-        <Button onClick={() => {clearSkills}} className={`${buttonStyles.button} ${buttonStyles.highlight} rounded-3xl mt-4 px-2 text-sm font-medium text-def-grey border-def-green border-2`} variant="outline">Clear</Button>
+        <Button onClick={clearSkills} className={`${buttonStyles.button} ${buttonStyles.highlight} rounded-3xl mt-4 px-2 text-sm font-medium text-def-grey border-def-green border-2`} variant="outline">Clear</Button>
       </div>
         <div className=" flex flex-col mx-40 my-10 gap-10">
           {projects.filter((project) => {
-            if (activeTags.length === 0) { return true; }
+            if (activeTags.length === 0) return true;
+            console.log(activeTags.length);
+            console.log(activeTags);
             return project.tags.some((tag) => activeTags.includes(tag));
           }).map((project, index) => (
             <Project key={`p${index + 1}`} activeTags={activeTags} project={project} />
