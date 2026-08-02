@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 
 import buttonStyles from "@/utilities/css/button.module.css";
 
-export default function Project(props: ProjectObj) {
+export default function Project({activeTags, project}: {activeTags: string[], project: ProjectObj}) {
 
   const { 
     title,
@@ -17,7 +17,7 @@ export default function Project(props: ProjectObj) {
     liveLink,
     status,
     tags
-  } = props;
+  } = project;
 
   const validStatus = ["ongoing", "paused", "completed"];
 
@@ -52,7 +52,7 @@ export default function Project(props: ProjectObj) {
           <Badge className={`${buttonStyles.highlight} font-normal`}>{validStatus.some(s => s === status.toLowerCase()) ? capitaliseString(status) : "Completed"}</Badge>
           <span className="drop-shadow-subtle">|</span>
           {tags.map((tag, index) => (
-            <Badge key={`t${index}`} className={`${buttonStyles.highlight} font-normal text-def-grey`} variant="outline">{capitaliseString(tag)}</Badge>
+            <Badge key={`t${index}`} className={(activeTags.includes(tag) ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` font-normal text-def-grey`} variant="outline">{capitaliseString(tag)}</Badge>
           ))}
         </div>
       </div>
