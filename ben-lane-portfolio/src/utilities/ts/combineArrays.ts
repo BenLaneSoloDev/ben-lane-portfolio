@@ -1,19 +1,20 @@
 import { capitaliseString } from "./capitaliseString";
 
-export function combineStringArrays(removeDuplicates: boolean, ...arrays: string[][]): string[] {
+export function combineTagArrays(...arrays: string[][]): string[] {
   
-  const addedItems = new Set<string>();
-  arrays[0].forEach((item: string) => { addedItems.add(capitaliseString(item)); });
-  arrays.shift();
-  arrays.forEach((array) => {
-    array.filter((item: string) => {
-      if (addedItems.has(capitaliseString(item)) && removeDuplicates) { return false;}
-      addedItems.add(capitaliseString(item));
-      return true;
-    })
-  });
+  const frequencyMap = new Map<string, number>();
 
-  const combinedString: string[] =  [...addedItems];
+  for (const array of arrays) {
+    for (const rawItem of array) {
+      const item = capitaliseString(rawItem);
+      const count = frequencyMap.get(item) ?? 0;
+      frequencyMap.set(item, count + 1);
+    }
+  }
 
-  return combinedString;
+  const sortedItems = Array.from(frequencyMap.entries())
+    .sort((a, b) => b[1] - a[1])
+    .map(([item]) => item);
+
+  return sortedItems;
 }

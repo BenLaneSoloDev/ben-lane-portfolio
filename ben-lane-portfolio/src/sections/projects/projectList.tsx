@@ -6,7 +6,7 @@ import Footer from "@/sections/footer/footer";
 import type { ProjectObj } from "./projectObj.ts";
 
 import { capitaliseString } from "@/utilities/ts/capitaliseString";
-import { combineStringArrays } from "@/utilities/ts/combineArrays";
+import { combineTagArrays } from "@/utilities/ts/combineArrays";
 
 import buttonStyles from "@/utilities/css/button.module.css";
 
@@ -28,7 +28,7 @@ export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
   useEffect(() => {
     let allTags: string[] = [];
     projects.forEach((project) => { allTags = [...allTags, ...project.tags]; });
-    setUniqueTags(combineStringArrays(true, allTags));
+    setUniqueTags(combineTagArrays(allTags));
   }, [])
 
   return (
