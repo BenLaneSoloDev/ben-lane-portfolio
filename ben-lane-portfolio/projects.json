@@ -33,7 +33,7 @@
   },
   {
     "id": "p3",
-    "featured": true,
+    "featured": false,
     "title": "Zombie Survival",
     "subtitle": "Year 2 University Individual Project",
     "briefDescription": "Simply type in the word you want to explore the meaning of and find your screen filled with countless examples of that word in a sentence.",

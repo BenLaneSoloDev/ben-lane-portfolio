@@ -1,76 +1,55 @@
-import type { ProjectObj } from "../projects/projectObj";
-import { getYouTubeEmbedUrl } from "@/utilities/ts/youtubeEmbedConverter";
-import { capitaliseString } from "@/utilities/ts/capitaliseString"
+import ProjectFeature from "./projectFeature.tsx";
 import { Button } from "@/components/ui/button.tsx";
-import { Badge } from "@/components/ui/badge";
+import { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel"
+
+import type { ProjectObj } from "../projects/projectObj";
 
 import buttonStyles from "@/utilities/css/button.module.css";
+import styles from "@/sections/projectFeatureCarousel/projectFeatureCarousel.module.css"
+import { Separator } from "@base-ui/react/separator";
 
 export default function ProjectFeatureCarousel({projects}: {projects: ProjectObj[]}) {
 
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState<number>(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api])
+
   const featuredProjects = projects.filter((project) => project.featured);
 
-  // const { 
-  //   title,
-  //   subtitle,
-  //   description,
-  //   video,
-  //   githubLink,
-  //   liveLink,
-  //   status,
-  //   tags
-  // } = projects[0];
-
   return (
-    <></>
+    <div className="flex flex-col items-center my-7.5">
+      <h2 className="uppercase font-semibold text-2xl text-center text-def-grey underline underline-offset-2">Featured Projects</h2>
+      <Carousel setApi={setApi} opts={{ loop: true }} className="mx-2 md:mx-20 w-full">
+        <CarouselContent className="my-7.5">
+          {featuredProjects.map((project, index) => (
+            <CarouselItem key={`citem${index}`} className="flex items-center justify-center">
+              <ProjectFeature project={project}/>
+            </CarouselItem>
+          ))}
+        </CarouselContent>  
+      </Carousel>
+      <div className="flex w-[70%] items-center gap-5">
+          {featuredProjects.map((_, index) => (
+            <Button 
+              key={`button${index}`} 
+              className={(index === current ? ` ${buttonStyles.highlightToggle}` : `hover:bg-def-l-green drop-shadow-subtle`) + ` ${buttonStyles["button-s"]} bg-def-l-green flex-1 rounded-full`} 
+              onClick={() => api?.scrollTo(index)} />
+          ))}
+        </div>
+  </div>
   )
-
-
-
-
-
-
-
-
-
-
-  
-  const validStatus = ["ongoing", "paused", "completed"];
-
-  const videoUrl: string= video ? getYouTubeEmbedUrl(video) : "";
-
-  
-
-  return (
-    <div className="flex flex-row flex-wrap items-center p-6 gap-6 rounded-4xl font-light text-def-grey bg-def-white border-3 border-def-orange shadow-md/20">
-      <div className="flex flex-col flex-1 gap-2">
-        <div className="">
-          <h2 className="ml-2 text-lg">
-            <strong className="text-xl">{title}</strong> | {subtitle}
-          </h2>
-        </div>
-        <div className="">
-          <iframe className="aspect-video w-50 rounded-2xl drop-shadow-green border-def-l-green border-2" 
-          src={videoUrl}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          loading="lazy"/>
-        </div>
-      </div>
-      <div className="flex flex-col flex-1 gap-4 text-base">
-        {description?.map((paragraph, index) => {
-          return <p key={`line${index}`}>{paragraph}</p>;
-        })}
-        <div className="flex flex-row gap-4 items-center">
-          {githubLink && <Button className={`${buttonStyles.button} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={githubLink} target="_blank"></a>}>Github</Button>}
-          {liveLink && <Button className={`${buttonStyles.button} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={liveLink} target="_blank"></a>}>Try It Out</Button>} 
-        </div>
-        <div className="flex flex-row flex-wrap gap-1 items-center">
-          <Badge className={`${buttonStyles.highlight} font-normal`}>{validStatus.some(s => s === status.toLowerCase()) ? capitaliseString(status) : "Completed"}</Badge>
-          <span className="drop-shadow-subtle">|</span>
-        </div>
-      </div>
-    </div>
-  );
 }

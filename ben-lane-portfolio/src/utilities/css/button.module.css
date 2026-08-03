@@ -36,9 +36,11 @@
 }
 
 .button:hover {
+  z-index: 10;
   transform: scale3d(1.2, 1.2, 1);
 }
 
 .button-s:hover {
+  z-index: 10;
   transform: scale3d(1.1, 1.1, 1);
 }
