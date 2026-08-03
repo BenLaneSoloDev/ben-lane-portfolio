@@ -22,7 +22,7 @@ export default function Project({activeTags, project}: {activeTags: string[], pr
   const validStatus = ["ongoing", "paused", "completed"];
 
   return (
-    <div className="flex flex-col overflow-hidden w-[45%] items-center rounded-4xl font-light text-def-grey bg-def-white border-4 border-def-orange shadow-md/20">
+    <div className="flex flex-col overflow-hidden w-full md:max-w-112.5 md:w-[45%] items-center rounded-4xl font-light text-def-grey bg-def-white border-4 border-def-orange shadow-md/20">
       <div className="w-full relative">
         <div className="flex flex-col absolute gap-3 bottom-3 right-3">
           {githubLink && <Button className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={githubLink} target="_blank"></a>}>Github</Button>}

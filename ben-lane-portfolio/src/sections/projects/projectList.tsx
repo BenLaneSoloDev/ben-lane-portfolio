@@ -44,7 +44,7 @@ export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
       </div> 
       <Button onClick={clearSkills} className={`${buttonStyles.button} ${buttonStyles.highlight} rounded-3xl mt-4 px-2 text-sm font-medium text-def-grey border-def-green border-2`} variant="outline">Clear</Button>
     </div>
-      <div className="flex flex-row flex-wrap justify-center mx-40 my-10 gap-10">
+      <div className="flex flex-row flex-wrap justify-center m-[5%] gap-10">
         {projects.filter((project) => {
           if (activeTags.length === 0) return true;
           console.log(activeTags.length);
