@@ -33,7 +33,8 @@ export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
   return (
     <div className="flex flex-col">
       <div className="flex flex-col items-center bg-def-white p-4 border-b-4 border-b-def-green border-t-2 border-t-def-l-green drop-shadow-subtle">
-      <h2 className="mb-4 text-def-grey font-semibold uppercase drop-shadow-subtle">Filter By Skill</h2>
+      <h2 className="text-def-grey font-semibold text-xl sm:text-2xl uppercase drop-shadow-subtle">All Projects</h2>
+      <h2 className="mb-4 text-def-l-grey font-semibold uppercase">Filter By Skill</h2>
       <div className="flex flex-row flex-wrap gap-2 items-center justify-center mx-[2.5%] md:w-[max(40%,700px)]">
         {uniqueTags.map((tag, index) => {
           const isActive = activeTags.includes(tag);
