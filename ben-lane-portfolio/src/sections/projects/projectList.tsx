@@ -35,14 +35,14 @@ export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
     <div className="flex flex-col">
       <div className="flex flex-col items-center bg-def-white p-4 border-b-4 border-b-def-green border-t-2 border-t-def-l-green drop-shadow-subtle">
       <h2 className="mb-4 text-def-grey font-semibold uppercase drop-shadow-subtle">Filter By Skill</h2>
-      <div className="flex flex-row flex-wrap gap-1 items-center justify-center mx-[30%]">
+      <div className="flex flex-row flex-wrap gap-2 items-center justify-center mx-[2.5%] md:w-[max(40%,700px)]">
         {uniqueTags.map((tag, index) => {
           const isActive = activeTags.includes(tag);
           return (
-            <Badge key={`t${index}`} onClick={() => {toggleTag(tag)}} className={(isActive ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` font-normal text-def-grey cursor-pointer`} variant="outline">{capitaliseString(tag)}</Badge>
+            <Badge key={`t${index}`} onClick={() => {toggleTag(tag)}} className={(isActive ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` text-base p-3 font-normal text-def-grey cursor-pointer`} variant="outline">{capitaliseString(tag)}</Badge>
         )})}
       </div> 
-      <Button onClick={clearSkills} className={`${buttonStyles.button} ${buttonStyles.highlight} rounded-3xl mt-4 px-2 text-sm font-medium text-def-grey border-def-green border-2`} variant="outline">Clear</Button>
+      <Button onClick={clearSkills} className={`${buttonStyles.button} ${buttonStyles.highlight} rounded-3xl mt-4 p-2 text-sm font-medium text-def-grey border-def-green border-2`} variant="outline">Clear</Button>
     </div>
       <div className="flex flex-row flex-wrap justify-center m-[5%] gap-10">
         {projects.filter((project) => {
