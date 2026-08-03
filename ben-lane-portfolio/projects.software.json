@@ -1,0 +1,18 @@
+[
+  {
+    "id": "p1",
+    "featured": true,
+    "title": "Legacy Tracker",
+    "subtitle": "Filmography Visualisation Tool",
+    "briefDescription": "Simply type in the word you want to explore the meaning of and find your screen filled with countless examples of that word in a sentence.",
+    "description": ["Fracture is a top-down, 2D, arcade shooter game in which a sheriff is tasked with crushing an onslaught of possessed skulls taking over the desert.", "This is a personal project I have created from scratch within Godot. I have developed entity state machine's, a custom proximity enemy spawn system and a customisable wave system for the game so far. I have also learned both visual and audio asset creation for this project, each created using Aseprite and Reaper respectively (except for fonts)."],
+    "status": "Paused",
+    "tags": ["GDScript", "Godot", "Aseprite", "Reaper", "Github Desktop", "version control"],
+    "githubLink": "https://github.com/BenLaneSoloDev/CowboyShooter.git",
+    "liveLink": "https://benlanedev.itch.io/fracture-v-0-1",
+    "poster": "fracture.webp",
+    "video": "https://youtu.be/yp4da8QwfgM?si=ot348da9ui_H7Kpl",
+    "startDate": "2025-09-25T14:59:43.511Z",
+    "endDate": "2025-10-27T17:26:43.511Z"
+  }
+]

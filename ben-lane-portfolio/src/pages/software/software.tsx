@@ -1,10 +1,7 @@
-export default function Software () {
+import Page from "@/sections/page.tsx";
 
-  console.log("HOME");
-
-  return (
-    <>
-      <h1>Software Dev Page</h1>
-    </>
-  );
+export default function Software() {
+  return(
+    <Page title="Fullstack Software Developer" pageData="/projects.software.json" />
+  )
 }
