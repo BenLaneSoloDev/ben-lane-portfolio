@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import Header from "@/sections/header/header";
 import ProjectList from "@/sections/projects/projectList"
 import type { ProjectObj } from "@/sections/projects/projectObj.ts";
 import ProjectFeatureCarousel from "@/sections/projectFeatureCarousel/projectFeatureCarousel";
+import Footer from "@/sections/footer/footer";
 
+import navbarStyles from "@/utilities/css/navbar.module.css"
+import gamesStyles from "./games.module.css";
 
 export default function Games () {
 
@@ -34,10 +36,14 @@ export default function Games () {
   }, []);
 
   return (
-    <div className="flex flex-col pt-10 sm:pt-0 min-h-dvh overflow-hidden justify-center def-background">
-      <Header title="Gameplay Developer" tagline="Focus on user experience..." />
-      <ProjectFeatureCarousel projects={projects}/>
+    <div className="flex flex-col min-h-dvh def-background">
+      <div className={`${navbarStyles.navbar} flex flex-col items-center pt-10 p-4 sm:pt-4 gap-4 border-b-4 border-def-green bg-def-white w-full`}>
+        <h1 className={`text-center font-bold text-4xl text-def-white drop-shadow-subtle`}>Gameplay Programmer</h1>
+      </div>
+      <ProjectFeatureCarousel projects={projects}/> 
       <ProjectList projects={projects}/>
+      <div className="w-full border-b-4 border-def-green"></div>
+      <Footer />
     </div>
   );
 }

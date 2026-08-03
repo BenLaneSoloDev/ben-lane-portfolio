@@ -30,7 +30,7 @@
   box-shadow: var(--drop-shadow-green);
 }
 
-.button, .button-s {
+.button, .button-s, .button-xs {
   cursor: pointer;
   transition: transform 0.25s ease;
 }
@@ -43,4 +43,9 @@
 .button-s:hover {
   z-index: 10;
   transform: scale3d(1.1, 1.1, 1);
+}
+
+.button-xs:hover {
+  z-index: 10;
+  transform: scale3d(1.05, 1.05, 1);
 }

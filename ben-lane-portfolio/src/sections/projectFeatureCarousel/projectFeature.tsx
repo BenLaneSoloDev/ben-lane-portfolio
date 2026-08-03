@@ -62,8 +62,8 @@ export default function ProjectFeature({project}: {project: ProjectObj}) {
             }
             else return <p key={`line${index}`} className="sm:hidden inline ml-1">{paragraph}</p>;
           })}
-          {expanded && <div className="inline sm:hidden absolute"><span className="material-symbols-outlined">arrow_drop_up</span></div>}
-          {!expanded && <div className="inline sm:hidden absolute"><span className="rotate-180 material-symbols-outlined">arrow_drop_up</span></div>}
+          {expanded && <div className="inline sm:hidden absolute"><img className="drop-shadow-subtle" src="./src/assets/home/drop-up-icon-green.svg"></img></div>}
+          {!expanded && <div className="inline sm:hidden absolute"><img className="rotate-180 drop-shadow-subtle" src="./src/assets/home/drop-up-icon-green.svg"></img></div>}
         </div>
         <div className="flex flex-row flex-wrap gap-1 items-center">
           {tags.map((tag, index) => (

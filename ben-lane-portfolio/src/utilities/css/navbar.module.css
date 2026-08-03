@@ -1,8 +1,8 @@
-.footer {
+.navbar {
   background-color: var(--color-def-l-green);
   transition: background-color 0.5s ease;
 }
 
-.footer:hover {
+.navbar:hover {
   background-color: var(--color-def-orange);
 }

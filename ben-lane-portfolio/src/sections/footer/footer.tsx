@@ -1,9 +1,9 @@
-import styles from "./footer.module.css"
+import styles from "@/utilities/css/navbar.module.css"
 import buttonStyles from "@/utilities/css/button.module.css"
 
 export default function Footer() {
   return (
-    <footer className={`${styles.footer} p-3 bg-def-l-green flex flex-col sm:flex-row items-center justify-center gap-2`}>
+    <footer className={`${styles.navbar} p-3 bg-def-l-green flex flex-col sm:flex-row items-center justify-center gap-2`}>
       <h2 className="font-semibold text-def-white drop-shadow-subtle uppercase">Find me elsewhere</h2>
       <span className="hidden sm:block text-def-white drop-shadow-subtle">| </span>
       <div className="flex flex-row gap-2">

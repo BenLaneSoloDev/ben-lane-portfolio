@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Project from "@/sections/projects/project";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button.tsx";
-import Footer from "@/sections/footer/footer";
 import type { ProjectObj } from "./projectObj.ts";
 
 import { capitaliseString } from "@/utilities/ts/capitaliseString";
@@ -54,7 +53,6 @@ export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
           <Project key={`p${index + 1}`} activeTags={activeTags} project={project} />
         ))}
       </div>
-      <Footer />
     </div>
   );
 }
