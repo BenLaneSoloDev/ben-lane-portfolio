@@ -14,7 +14,6 @@ export default function ProjectFeature({project}: {project: ProjectObj}) {
   const { 
     title,
     subtitle,
-    briefDescription,
     description,
     video,
     githubLink,
@@ -52,7 +51,7 @@ export default function ProjectFeature({project}: {project: ProjectObj}) {
         <div className="flex flex-row justify-between">
           <Badge className={`${buttonStyles.highlight} font-normal`}>{validStatus.some(s => s === status.toLowerCase()) ? capitaliseString(status) : "Completed"}</Badge>
         </div>
-        <div onClick={() => setExpanded(!expanded)} className="sm:flex sm:flex-col sm:gap-4">
+        <div onClick={() => setExpanded(!expanded)} className="relative sm:flex sm:flex-col sm:gap-4">
           {description?.map((paragraph, index) => {
             return <p key={`line${index}`} className="hidden sm:block ml-1">{paragraph}</p>;
           })}
@@ -62,8 +61,8 @@ export default function ProjectFeature({project}: {project: ProjectObj}) {
             }
             else return <p key={`line${index}`} className="sm:hidden inline ml-1">{paragraph}</p>;
           })}
-          {expanded && <div className="inline sm:hidden absolute"><img className="drop-shadow-subtle" src="./src/assets/home/drop-up-icon-green.svg"></img></div>}
-          {!expanded && <div className="inline sm:hidden absolute"><img className="rotate-180 drop-shadow-subtle" src="./src/assets/home/drop-up-icon-green.svg"></img></div>}
+          {expanded && <div className="inline-block sm:hidden absolute"><img className="drop-shadow-subtle" src="./src/assets/home/drop-up-icon-green.svg"></img></div>}
+          {!expanded && <div className="inline-block sm:hidden absolute"><img className="rotate-180 drop-shadow-subtle" src="./src/assets/home/drop-up-icon-green.svg"></img></div>}
         </div>
         <div className="flex flex-row flex-wrap gap-1 items-center">
           {tags.map((tag, index) => (

@@ -30,6 +30,11 @@ export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
     setUniqueTags(combineTagArrays(allTags));
   }, [])
 
+  // TODO: ADD SHRINK ON TAGS FOR MOBILE
+  // TODO: UPDATE READ ME
+  // TODO: UPLOAD PORTFOLIO TO VERCELs
+  // TODO: ADD PORTFOLIO TO THE PROJECTS
+
   return (
     <div className="flex flex-col">
       <div className="flex flex-col items-center bg-def-white p-4 border-b-4 border-b-def-green border-t-2 border-t-def-l-green drop-shadow-subtle">
@@ -47,8 +52,6 @@ export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
       <div className="flex flex-row flex-wrap justify-center m-[5%] gap-10">
         {projects.filter((project) => {
           if (activeTags.length === 0) return true;
-          console.log(activeTags.length);
-          console.log(activeTags);
           return project.tags.some((tag) => activeTags.includes(tag));
         }).map((project, index) => (
           <Project key={`p${index + 1}`} activeTags={activeTags} project={project} />
