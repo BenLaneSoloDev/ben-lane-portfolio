@@ -48,12 +48,12 @@ export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
             if ((index >= initialTagLimit) && !expandedTags) return;
             const isActive = activeTags.includes(tag);
             return (
-              <Badge key={`t${index}`} onClick={() => {toggleTag(tag)}} className={(isActive ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` text-base p-3 font-normal text-def-grey cursor-pointer`} variant="outline">{capitaliseString(tag)}</Badge>
+              <Badge key={`t${index}`} onClick={(event) => {event.stopPropagation(); toggleTag(tag);}} className={(isActive ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` text-base p-3 font-normal text-def-grey cursor-pointer`} variant="outline">{capitaliseString(tag)}</Badge>
           )})}
         </div>
         {(expandedTags && uniqueTags.length > initialTagLimit) && <div className="inline-block mt-2"><img className="drop-shadow-subtle" src="./src/assets/home/drop-up-icon-green.svg"></img></div>}
         {(!expandedTags && uniqueTags.length > initialTagLimit) && <div className="inline-block text-def-green drop-shadow-subtle text-2xl">...</div>}
-        <Button onClick={clearSkills} className={(uniqueTags.length > initialTagLimit ? `mt-2` : `mt-4`) +  ` ${buttonStyles.button} ${buttonStyles.highlight} rounded-3xl p-2 text-sm font-medium text-def-grey border-def-green border-2`} variant="outline">Clear</Button>
+        <Button onClick={(event) => { event.stopPropagation(); clearSkills(); }} className={(uniqueTags.length > initialTagLimit ? `mt-2` : `mt-4`) +  ` ${buttonStyles.button} ${buttonStyles.highlight} rounded-3xl p-2 text-sm font-medium text-def-grey border-def-green border-2`} variant="outline">Clear</Button>
       </div>
       <div className="flex flex-row flex-wrap justify-center m-[5%] gap-10">
         {projects.filter((project) => {
