@@ -22,7 +22,7 @@ export default function Hero({isHomePage} : {isHomePage: boolean}) {
         <h2 className="hidden md:block md:text-base text-def-green">Benjamin Lane:</h2>
         <h1 className="block md:block text-xl md:text-4xl font-semibold text-def-green">About Me</h1>
         <Separator className="my-0.5 md:my-2" />
-        <p className="text-def-grey">I am a gameplay programmer graduate with 4 years of experience. I am driven by my enjoyment of new and fun gameplay mechanics, whether its designing combat systems, developing unique player interactions or refining movement. All of this done with my keen eye for detail and care for the users experience.</p>
+        <p className="text-def-grey">I am a software and gameplay developer with 4 years of hands-on experience, specialising in full-stack MERN applications and interactive gameplay systems. I am driven by creating engaging user experiences, whether building responsive web applications, designing fluid combat systems, or refining interactive mechanics. Everything I build is guided by a sharp eye for detail and a passion for UX design. </p>
       </div>
       <div className="flex flex-col gap-4">
         <div className="flex flex-row items-stretch justify-center gap-[4%] sm:gap-8">

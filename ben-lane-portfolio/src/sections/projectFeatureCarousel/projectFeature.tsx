@@ -52,7 +52,7 @@ export default function ProjectFeature({project}: {project: ProjectObj}) {
         <div className="flex flex-row justify-between">
           <Badge className={`${buttonStyles.highlight} font-normal`}>{validStatus.some(s => s === status.toLowerCase()) ? capitaliseString(status) : "Completed"}</Badge>
         </div>
-        <div onClick={() => setExpanded(!expanded)}>
+        <div onClick={() => setExpanded(!expanded)} className="sm:flex sm:flex-col sm:gap-4">
           {description?.map((paragraph, index) => {
             return <p key={`line${index}`} className="hidden sm:block ml-1">{paragraph}</p>;
           })}
