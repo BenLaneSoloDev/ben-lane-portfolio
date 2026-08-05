@@ -2,10 +2,11 @@ import type { ProjectObj } from "./projectObj";
 import { capitaliseString } from "@/utilities/ts/capitaliseString"
 import { Button } from "@/components/ui/button.tsx";
 import { Badge } from "@/components/ui/badge";
+import { memo } from "react";
 
 import buttonStyles from "@/utilities/css/button.module.css";
 
-export default function Project({activeTags, project}: {activeTags: string[], project: ProjectObj}) {
+function Project({activeTags, project}: {activeTags: Set<string>, project: ProjectObj}) {
 
   const { 
     title,
@@ -37,11 +38,30 @@ export default function Project({activeTags, project}: {activeTags: string[], pr
         <div className="flex flex-row flex-wrap gap-1 items-center">
           <Badge className={`${buttonStyles.highlight} font-normal`}>{validStatus.some(s => s === status.toLowerCase()) ? capitaliseString(status) : "Completed"}</Badge>
           <span className="drop-shadow-subtle">|</span>
-          {tags.map((tag, index) => (
-            <Badge key={`t${index}`} className={(activeTags.includes(tag) ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` font-normal text-def-grey`} variant="outline">{capitaliseString(tag)}</Badge>
-          ))}
+          {tags.map((tag, index) => {
+            const isActive = activeTags.has(tag);
+            return (
+            <Badge key={`t${index}`} className={(isActive ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` font-normal text-def-grey`} variant="outline">{capitaliseString(tag)}</Badge>
+          )})}
         </div>
       </div>      
     </div>
   );
 }
+
+export default memo(
+  Project,
+  (prevProps, nextProps) => {
+    if (prevProps.project !== nextProps.project) {
+      return false; // false means "DO re-render"
+    }
+
+    const hasAnyTagChanged = nextProps.project.tags.some((tag) => {
+      const wasActive = prevProps.activeTags.has(tag);
+      const isActiveNow = nextProps.activeTags.has(tag);
+      return wasActive !== isActiveNow; 
+    });
+    
+    return !hasAnyTagChanged;
+  }
+);
