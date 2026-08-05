@@ -1,0 +1,13 @@
+@keyframes shrinking-header {
+  to {
+    font-size: 1.5rem;
+    padding: 0.25rem;
+    gap: 0.25rem;
+  }
+}
+
+.sticky-header {
+  animation: shrinking-header linear forwards;
+  animation-timeline: scroll();
+  animation-range: 0px 100px;
+}

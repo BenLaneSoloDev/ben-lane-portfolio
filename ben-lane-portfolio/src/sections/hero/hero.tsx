@@ -2,6 +2,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button.tsx";
 
+import { startTransition } from "react";
 import { useNavigate } from "react-router";
 
 import buttonStyles from "@/utilities/css/button.module.css";
@@ -9,6 +10,12 @@ import buttonStyles from "@/utilities/css/button.module.css";
 export default function Hero({isHomePage} : {isHomePage: boolean}) {
 
   const navigate = useNavigate();
+
+  function handleNavigate(destination: string) {
+    startTransition(() => {
+      navigate(destination);
+    })
+  }
 
   return (
     <div className="flex flex-col md:flex-row flex-1 gap-2 sm:gap-4 md:gap-8 p-[4%] md:py-10 md:w-[min(max(80%,700px),1000px)] md:mx-auto">
@@ -28,8 +35,8 @@ export default function Hero({isHomePage} : {isHomePage: boolean}) {
         <div className="flex flex-row items-stretch justify-center gap-[4%] sm:gap-8">
           {isHomePage &&
             <>
-              <Button onClick={() => {navigate("/software-dev")}} className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} flex-1 whitespace-normal h-auto p-[2%] md:p-2 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Software Development</Button>
-              <Button onClick={() => {navigate("/game-dev")}} className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} flex-1 whitespace-normal h-auto p-[2%] md:p-2 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Games Development</Button>
+              <Button onClick={() => {handleNavigate("/software-dev")}} className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} flex-1 whitespace-normal h-auto p-[2%] md:p-2 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Software Development</Button>
+              <Button onClick={() => {handleNavigate("/game-dev")}} className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} flex-1 whitespace-normal h-auto p-[2%] md:p-2 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline">Games Development</Button>
             </>
           }
         </div>

@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import styles from "./projectCarousel.module.css";
 
 interface CarouselProps {

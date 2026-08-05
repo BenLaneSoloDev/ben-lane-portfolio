@@ -1,5 +1,4 @@
 import type { ProjectObj } from "./projectObj";
-import { getYouTubeEmbedUrl } from "@/utilities/ts/youtubeEmbedConverter";
 import { capitaliseString } from "@/utilities/ts/capitaliseString"
 import { Button } from "@/components/ui/button.tsx";
 import { Badge } from "@/components/ui/badge";
