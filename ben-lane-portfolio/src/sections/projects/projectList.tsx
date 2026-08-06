@@ -33,10 +33,8 @@ export default function ProjectList({ projectType } : { projectType: boolean }) 
     }
   }, [projects])
 
-  // TODO: OPTIMISE (Look into React.Memo, React.StartTransition)
   // TODO: CREATE 404 PAGE
   // TODO: EXPAND PAGE LAYOUT SO FOOTER HITS BOTTOM WHEN LOADING
-  // TODO: UPLOAD PORTFOLIO TO VERCELs
   // TODO: ADD PORTFOLIO TO THE PROJECTS
 
   return (

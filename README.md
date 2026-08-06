@@ -2,7 +2,7 @@
 
 My portfolio showcasing projects in both game and software development.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-TBA-brightgreen?style=for-the-badge)](#live-site-link-n/a)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-TBA-brightgreen?style=for-the-badge)](https://ben-lane-portfolio-uba9-seven.vercel.app/)
 [![Tech Stack](https://img.shields.io/badge/Stack-React_|_Typescript_|_Tailwind-blue?style=for-the-badge)](#tech-stack)
 
 ---
@@ -30,6 +30,7 @@ My portfolio showcasing projects in both game and software development.
 * **Core Framework & Language:**
   * `Typescript` – Type-safe application logic and async data fetching.
   * `React` – Component-based UI architecture. 
+  * `Vercel` – Page hosting. 
 
 * **Build & Routing:**
   * `Vite` – Fast development tooling and production bundling.
@@ -62,5 +63,6 @@ My portfolio showcasing projects in both game and software development.
 * **Google Fonts:** Rubik | [Google Fonts](https://fonts.google.com/specimen/Rubik)
 * **Google Font Icons:** Drop Up | [Google Font Icons](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:arrow_drop_up:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=drop+up&icon.size=24&icon.color=%23e3e3e3)
 * **Steve Schoger:** Hero Pattern BG | [Steve Schoger](https://heropatterns.com/)
+* **Andrean Prabowo:** User icon used for the tab image | [Flaticon](https://www.flaticon.com/free-icon/user_5582872?term=people&page=2&position=96&origin=tag&related_id=5582872)
 
 ---
