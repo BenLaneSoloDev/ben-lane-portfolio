@@ -6,7 +6,12 @@ import { combineTagArrays } from "@/utilities/ts/combineArrays";
 
 import SkillsHeader from "./skillsHeader.tsx";
 
-export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
+import gamesData from "@/data/projects.games.json";
+import softwareData from "@/data/projects.software.json";
+
+export default function ProjectList({ projectType } : { projectType: boolean }) {
+
+  const projects: ProjectObj[] = projectType ? softwareData as ProjectObj[] : gamesData as ProjectObj[];
 
   const [uniqueTags, setUniqueTags] = useState<string[]>([]);
   const [activeTags, setActiveTags] = useState<string[]>([]);

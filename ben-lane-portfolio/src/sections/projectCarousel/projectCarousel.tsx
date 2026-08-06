@@ -4,7 +4,7 @@ interface CarouselProps {
   total: number
 }
 
-const imagesMap = import.meta.glob<{ default: string }>('/public/projectSS/*.webp', { eager: true });
+const imagesMap = import.meta.glob<{ default: string }>('/projectSS/*.webp', { eager: true });
 const images: string[] = Object.values(imagesMap).map((file) => file.default);
 
 export default function ProjectCarousel(props: CarouselProps) {

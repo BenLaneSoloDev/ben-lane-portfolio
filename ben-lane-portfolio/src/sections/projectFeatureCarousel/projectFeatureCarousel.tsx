@@ -12,7 +12,12 @@ import type { ProjectObj } from "../projects/projectObj";
 
 import buttonStyles from "@/utilities/css/button.module.css";
 
-export default function ProjectFeatureCarousel({projects}: {projects: ProjectObj[]}) {
+import gamesData from "@/data/projects.games.json";
+import softwareData from "@/data/projects.software.json";
+
+export default function ProjectFeatureCarousel({projectType}: {projectType: boolean}) {
+
+  const projects: ProjectObj[] = projectType ? softwareData as ProjectObj[] : gamesData as ProjectObj[];
 
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState<number>(0);
