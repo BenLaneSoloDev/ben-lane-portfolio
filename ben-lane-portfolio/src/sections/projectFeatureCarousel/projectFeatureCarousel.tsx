@@ -32,6 +32,7 @@ export default function ProjectFeatureCarousel({projectType}: {projectType: bool
   }, [api])
 
   const featuredProjects = projects.filter((project) => project.featured);
+  console.log(featuredProjects);
 
   return (
     <div className="flex flex-col items-center my-7.5">
@@ -46,7 +47,7 @@ export default function ProjectFeatureCarousel({projectType}: {projectType: bool
         </CarouselContent>  
       </Carousel>
       <div className="flex w-[70%] items-center gap-5">
-        {featuredProjects.map((_, index) => (
+        {featuredProjects.length > 1 && featuredProjects.map((_, index) => (
           <Button 
             key={`button${index}`} 
             className={(index === current ? ` ${buttonStyles.highlightToggle}` : `hover:bg-def-l-green drop-shadow-subtle`) + ` ${buttonStyles["button-xs"]} bg-def-l-green flex-1 rounded-full`} 

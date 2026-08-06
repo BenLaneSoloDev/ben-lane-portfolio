@@ -33,8 +33,6 @@ export default function ProjectList({ projectType } : { projectType: boolean }) 
     }
   }, [projects])
 
-  // TODO: ADD PORTFOLIO TO THE PROJECTS
-
   return (
     <div className="flex flex-col">
       <SkillsHeader uniqueTags={uniqueTags} activeTags={activeTags} toggleTag={(tag) => toggleTag(tag)} clearTags={clearSkills}/>

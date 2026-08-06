@@ -14,5 +14,16 @@
     "video": "https://youtu.be/GF_05ki8n5g",
     "startDate": "2026-07-09T12:13:00.511Z",
     "endDate": "2026-07-29T14:13:00.511Z"
+  },
+  {
+    "id": "p2",
+    "featured": false,
+    "title": "Portfolio",
+    "subtitle": "Personal Project Showcase",
+    "briefDescription": "A webpage to share projects made on my development journey.",
+    "status": "Paused",
+    "tags": ["Typescript", "CSS", "React", "TailwindCSS", "Shadcn/UI", "RadixUI", "React Router", "Vite", "Vercel"],
+    "githubLink": "https://github.com/BenLaneSoloDev/ben-lane-portfolio",
+    "poster": "portfolio.webp"
   }
 ]

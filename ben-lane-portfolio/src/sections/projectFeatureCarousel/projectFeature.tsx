@@ -16,13 +16,14 @@ export default function ProjectFeature({project}: {project: ProjectObj}) {
   const { 
     title,
     subtitle,
-    description,
     video,
     githubLink,
     liveLink,
     status,
     tags
   } = project;
+
+  const description: string[] = project.description ? project.description as string[] : [project.briefDescription] as string[];
 
   const validStatus = ["ongoing", "paused", "completed"];
 

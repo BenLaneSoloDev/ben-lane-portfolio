@@ -16,9 +16,8 @@ My portfolio showcasing projects in both game and software development.
 
 ## ✨ Key Features & Technical Highlights
 
-* **Featured Work Carousel:** High-visibility spotlight carousel showcasing select top-tier projects with smooth touch/swipe gestures and accessible control primitives.
-* **Dynamic Skill Filtering:** Real-time project grid filtering powered by interactive skill badges, complete with an expandable/collapsible filter drawer and single-click state resets.
-* **Async Data Fetching:** Asynchronously fetches project schemas from external JSON data files.
+* **Featured Project Carousel:** High-visibility spotlight carousel showcasing select top-tier projects.
+* **Dynamic Skill Filtering:** Real-time project grid filtering powered by interactive skill badges, complete with a collapsing filter drawer and single-click state resets.
 * **Accessible & Responsive Layout:** Styled with utility-first **Tailwind CSS** flexbox/grid layouts to ensure seamless mobile-to-desktop responsiveness.
 * **Strict Type Safety:** Built with end-to-end **TypeScript** interface definitions to prevent runtime rendering bugs.
 
@@ -47,16 +46,16 @@ My portfolio showcasing projects in both game and software development.
 ## 🩹 Known Issues
 
 * **Performance:**
-> * **Unnecessary React re-renders slow down certain project interactions**
+> * **Unnecessary React re-renders slow down project interactions.**
 * **Visuals:**
-> * **Placeholder visuals do not exist for images and videos**
+> * **Placeholder visuals do not exist for images and videos.**
 
 ---
 
 ## 🌟 Future Updates
 
-* **Project Pagination:** To optimise the loading of too many projects.
-* **Github History:** Show recent commit data from my personal github
+* **Project Pagination:** Optimise the loading of too many projects.
+* **Github History:** Show recent commit data from my personal github.
 
 ---
 

@@ -11,6 +11,6 @@ export interface ProjectObj {
   liveLink?: string,
   poster: string,
   video?: string,
-  startDate: string,
-  endDate: string
+  startDate?: string,
+  endDate?: string
 }
