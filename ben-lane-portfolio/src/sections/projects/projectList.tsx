@@ -33,8 +33,6 @@ export default function ProjectList({ projectType } : { projectType: boolean }) 
     }
   }, [projects])
 
-  // TODO: CREATE 404 PAGE
-  // TODO: EXPAND PAGE LAYOUT SO FOOTER HITS BOTTOM WHEN LOADING
   // TODO: ADD PORTFOLIO TO THE PROJECTS
 
   return (

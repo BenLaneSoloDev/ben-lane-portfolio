@@ -2,7 +2,7 @@
 
 My portfolio showcasing projects in both game and software development.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-TBA-brightgreen?style=for-the-badge)](https://ben-lane-portfolio-uba9-seven.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Here-brightgreen?style=for-the-badge)](https://ben-lane-portfolio-uba9-seven.vercel.app/)
 [![Tech Stack](https://img.shields.io/badge/Stack-React_|_Typescript_|_Tailwind-blue?style=for-the-badge)](#tech-stack)
 
 ---
@@ -48,6 +48,8 @@ My portfolio showcasing projects in both game and software development.
 
 * **Performance:**
 > * **Unnecessary React re-renders slow down certain project interactions**
+* **Visuals:**
+> * **Placeholder visuals do not exist for images and videos**
 
 ---
 
