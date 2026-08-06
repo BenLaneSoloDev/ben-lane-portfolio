@@ -7,6 +7,8 @@ import { useNavigate } from "react-router";
 
 import buttonStyles from "@/utilities/css/button.module.css";
 
+import headshot from './src/assets/headshot.webp';
+
 export default function Hero({isHomePage} : {isHomePage: boolean}) {
 
   const navigate = useNavigate();
@@ -21,7 +23,7 @@ export default function Hero({isHomePage} : {isHomePage: boolean}) {
     <div className="flex flex-col md:flex-row flex-1 gap-2 sm:gap-4 md:gap-8 p-[4%] md:py-10 md:w-[min(max(80%,700px),1000px)] md:mx-auto">
       <div className="flex items-center justify-center md:basis-[40%] md:grow-0 md:shrink-0">
         <AspectRatio ratio={1 / 1} className="w-[50%] sm:w-[40%] md:w-full mx-auto border-4 rounded-full overflow-clip border-def-orange shadow-md/20">
-          <img src="./src/assets/home/headshot.webp" alt="Headshot" className="object-cover object-center"></img>
+          <img src={headshot} alt="Headshot" className="object-cover object-center"></img>
         </AspectRatio>
       </div>
       <div className="flex flex-col content-center self-center gap-4 md:basis-0 md:grow md:min-w-0">
