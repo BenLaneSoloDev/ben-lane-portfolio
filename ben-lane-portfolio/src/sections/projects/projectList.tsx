@@ -29,7 +29,8 @@ export default function ProjectList({ projects } : { projects: ProjectObj[] }) {
   }, [projects])
 
   // TODO: OPTIMISE (Look into React.Memo, React.StartTransition)
-  // TODO: UPDATE READ ME
+  // TODO: CREATE 404 PAGE
+  // TODO: EXPAND PAGE LAYOUT SO FOOTER HITS BOTTOM WHEN LOADING
   // TODO: UPLOAD PORTFOLIO TO VERCELs
   // TODO: ADD PORTFOLIO TO THE PROJECTS
 
