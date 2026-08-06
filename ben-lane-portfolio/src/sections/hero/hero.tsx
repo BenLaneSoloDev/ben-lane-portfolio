@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 
 import buttonStyles from "@/utilities/css/button.module.css";
 
-import headshot from './src/assets/headshot.webp';
+import headshot from "@/assets/home/headshot.webp";
 
 export default function Hero({isHomePage} : {isHomePage: boolean}) {
 
