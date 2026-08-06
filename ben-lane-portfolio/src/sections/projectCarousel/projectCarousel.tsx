@@ -4,14 +4,8 @@ interface CarouselProps {
   total: number
 }
 
-// TODO: Link to project JSON's + Make Dynamic Through Props
-const images = [
-  "enfrosted",
-  "fracture",
-  "legacy-tracker",
-  "pixel-dungeon",
-  "zombie-survival"
-]
+const imagesMap = import.meta.glob<{ default: string }>('/public/projectSS/*.webp', { eager: true });
+const images: string[] = Object.values(imagesMap).map((file) => file.default);
 
 export default function ProjectCarousel(props: CarouselProps) {
 
@@ -22,14 +16,14 @@ export default function ProjectCarousel(props: CarouselProps) {
       <div className={styles.group}>
         {Array.from({ length: total }).map((_, index) => (
           <div key={`ss${index + 1}-1`} className={`${styles.card}`}>
-            <img src={`./src/assets/home/projectSS/${images[index]}.webp`} alt="Project Screenshot"></img>
+            <img src={images[index]} alt="Project Screenshot"></img>
           </div>
         ))}
       </div>
       <div aria-hidden className={`${styles.group}`}>
         {Array.from({ length: total }).map((_, index) => (
           <div key={`ss${index + 1}-2`} className={`${styles.card}`}>
-            <img src={`./src/assets/home/projectSS/${images[index]}.webp`} alt="Project Screenshot"></img>
+            <img src={images[index]} alt="Project Screenshot"></img>
           </div>
         ))}
       </div>

@@ -7,6 +7,8 @@ import { capitaliseString } from "@/utilities/ts/capitaliseString.ts";
 import buttonStyles from "@/utilities/css/button.module.css";
 import { useState } from "react";
 
+import dropUpIcon from "@/assets/home/drop-up-icon-green.svg";
+
 export default function ProjectFeature({project}: {project: ProjectObj}) {
   
   const [expanded, setExpanded] = useState<boolean>(false);
@@ -61,7 +63,7 @@ export default function ProjectFeature({project}: {project: ProjectObj}) {
             }
             else return <p key={`line${index}`} className="sm:hidden inline ml-1">{paragraph}</p>;
           })}
-          {expanded && <div className="inline-block sm:hidden absolute"><img className="drop-shadow-subtle" src="./src/assets/home/drop-up-icon-green.svg"></img></div>}
+          {expanded && <div className="inline-block sm:hidden absolute"><img className="drop-shadow-subtle" src={dropUpIcon}></img></div>}
           {!expanded && <div className="inline-block sm:hidden absolute text-def-green drop-shadow-subtle ml-2">...</div>}
         </div>
         <div className="flex flex-row flex-wrap gap-1 items-center">

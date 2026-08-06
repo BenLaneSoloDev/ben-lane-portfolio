@@ -6,6 +6,8 @@ import { capitaliseString } from "@/utilities/ts/capitaliseString";
 
 import buttonStyles from "@/utilities/css/button.module.css";
 
+import dropUpIcon from "@/assets/home/drop-up-icon-green.svg";
+
 export default function SkillsHeader({ uniqueTags, activeTags, toggleTag, clearTags } : { uniqueTags: string[], activeTags: string[], toggleTag: (tag: string) => void, clearTags: () => void}) {
   
   const [expandedTags, setExpandedTags] = useState<boolean>(false);
@@ -23,7 +25,7 @@ export default function SkillsHeader({ uniqueTags, activeTags, toggleTag, clearT
             <Badge key={`t${index}`} onClick={(event) => {event.stopPropagation(); toggleTag(tag);}} className={(isActive ? `${buttonStyles.highlightToggle}` : `${buttonStyles.highlight}`) + ` text-base p-3 font-normal text-def-grey cursor-pointer`} variant="outline">{capitaliseString(tag)}</Badge>
         )})}
       </div>
-      {(expandedTags && uniqueTags.length > initialTagLimit) && <div className="inline-block mt-2"><img className="drop-shadow-subtle" src="./src/assets/home/drop-up-icon-green.svg"></img></div>}
+      {(expandedTags && uniqueTags.length > initialTagLimit) && <div className="inline-block mt-2"><img className="drop-shadow-subtle" src={dropUpIcon}></img></div>}
       {(!expandedTags && uniqueTags.length > initialTagLimit) && <div className="inline-block text-def-green drop-shadow-subtle text-2xl">...</div>}
       <Button onClick={(event) => { event.stopPropagation(); clearTags(); }} className={(uniqueTags.length > initialTagLimit ? `mt-2` : `mt-4`) +  ` ${buttonStyles.button} ${buttonStyles.highlight} rounded-3xl p-2 text-sm font-medium text-def-grey border-def-green border-2`} variant="outline">Clear</Button> 
     </div>
