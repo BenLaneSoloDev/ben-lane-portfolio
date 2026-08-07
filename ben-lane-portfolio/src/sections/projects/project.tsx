@@ -30,7 +30,7 @@ function Project({activeTags, project}: {activeTags: Set<string>, project: Proje
           {githubLink && <Button className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={githubLink} target="_blank"></a>}>Github</Button>}
           {liveLink && <Button className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={liveLink} target="_blank"></a>}>Try It Out</Button>} 
         </div>
-        <img className="object-cover object-center aspect-video h-full" src={getProjectImage(poster)} alt="Project Screenshot"></img>
+        <img className="object-cover object-center aspect-video h-full w-full" src={getProjectImage(poster)} alt="Project Screenshot"></img>
       </div>
       <div className="flex flex-col p-3 gap-3 border-t-4 border-def-orange"> 
         <h2 className="w-full text-lg">

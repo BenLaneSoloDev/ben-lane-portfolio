@@ -146,3 +146,7 @@
     @apply font-sans;
   }
 }
+
+body {
+  background-color: var(--color-def-l-green);
+}
