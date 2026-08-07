@@ -17,24 +17,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1em;
   animation: spin 10s infinite linear;
-  padding: 0.5em;
+  padding-block: 0.5rem;
+  padding-inline: 0.25rem;
+  gap: 0.5rem;
 }
 
 .card {
-  flex: 0 0 25rem;
+  width: 25rem;
   aspect-ratio: 3/2;
   background: var(--color-def-l-grey);
   border-radius: .2em;
   text-align: center;
   align-content: center;
   border-width: 0.25rem;
-  border-color: var(--color-def-l-grey);  
-  filter: grayscale(100%);
-  /* transition: filter 0.5s ease, border-color 0.5s ease; */
-  filter: grayscale(0%);
   border-color: var(--color-def-green);
+
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .card img {
@@ -42,13 +44,6 @@
   height: 100%;
   object-fit: cover;
 }
-
-/*
-.card:hover {
-  filter: grayscale(0%);
-  border-color: var(--color-def-green);
-}
-*/  
 
 @keyframes spin {
   from {
