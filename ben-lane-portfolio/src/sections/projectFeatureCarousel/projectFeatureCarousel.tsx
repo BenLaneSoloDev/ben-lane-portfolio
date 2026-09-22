@@ -7,6 +7,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel"
+import HomeButton from "@/components/custom/homeButton";
 
 import type { ProjectObj } from "../projects/projectObj";
 
@@ -35,7 +36,8 @@ export default function ProjectFeatureCarousel({projectType}: {projectType: bool
   console.log(featuredProjects);
 
   return (
-    <div className="flex flex-col items-center my-7.5">
+    <div className="flex flex-col items-center mb-7.5">
+      <div className="mt-4 mr-0 mb-4 sm:mb-0 sm:ml-auto sm:mr-4"><HomeButton /></div>
       <h2 className="uppercase font-semibold text-xl sm:text-2xl text-center text-def-grey drop-shadow-subtle">Featured Project{featuredProjects.length > 1 && "s"}</h2>
       <Carousel setApi={setApi} opts={{ loop:  true }} className="mx-2 md:mx-20 w-full">
         <CarouselContent className="my-7.5">

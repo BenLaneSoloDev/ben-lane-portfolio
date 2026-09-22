@@ -7,7 +7,7 @@ export interface ProjectObj {
   description?: string[],
   status: string,
   tags: string[],
-  githubLink?: string,
+  githubLinks?: string[],
   liveLink?: string,
   poster: string,
   video?: string,

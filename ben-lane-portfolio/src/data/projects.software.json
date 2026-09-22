@@ -8,7 +8,7 @@
     "description": ["Legacy Tracker is an interactive data visualization tool that generates dynamic, score-scaled filmography Treemaps for film creatives using the TMDB API and D3.js. It is built using Javascript and utilises custom Vercel serverless functions to securely handle API queries.", "For the site to remain highly responsive despite the dense image loads, it features custom frame scheduling via 'requestAnimationFrame' and event debouncing, preserving a fast Interaction to Next Paint (INP < 40ms) even during heavy CPU throttling."],
     "status": "Paused",
     "tags": ["Javascript", "HTML", "CSS", "D3.js", "REST API", "Serverless Functions", "Vercel", "Web Vitals", "Optimisation"],
-    "githubLink": "https://github.com/BenLaneSoloDev/LegacyTracker",
+    "githubLinks": ["https://github.com/BenLaneSoloDev/LegacyTracker"],
     "liveLink": "https://legacy-tracker-zus6.vercel.app/",
     "poster": "legacy-tracker.webp",
     "video": "https://youtu.be/GF_05ki8n5g",
@@ -21,9 +21,25 @@
     "title": "Portfolio",
     "subtitle": "Personal Project Showcase",
     "briefDescription": "A webpage to share projects made on my development journey.",
-    "status": "Paused",
+    "status": "Complete",
     "tags": ["Typescript", "CSS", "React", "TailwindCSS", "Shadcn/UI", "RadixUI", "React Router", "Vite", "Vercel"],
-    "githubLink": "https://github.com/BenLaneSoloDev/ben-lane-portfolio",
+    "githubLinks": ["https://github.com/BenLaneSoloDev/ben-lane-portfolio"],
     "poster": "portfolio.webp"
+  },
+  {
+    "id": "p3",
+    "featured": true,
+    "title": "Bug Reporter",
+    "subtitle": "Project & Bug Tracking Website",
+    "briefDescription": "A dashboard website for managing bugs in programming projects. It allows users to easily track and monitor software bugs with real-time UI updates and type-safe form validation.",
+    "description": ["A dashboard website for managing bugs in programming projects. It allows users to easily track and monitor software bugs with real-time UI updates and type-safe form validation.", "It has a secure RESTful backend API that handles user authentication as well as user specific linked data storage. It is used to read and write details of bugs found on specific projects, which can be controlled by users on the frontend site."],
+    "status": "Paused",
+    "tags": ["Typescript", "React", "Vercel", "Node.JS", "Express", "Vite", "React Router", "MongoDB", "Mongoose", "Express Validator", "Winston", "TanStack Query", "JS-Cookie", "Zod", "Swagger", "TailwindCSS", "Shadcn/UI", "REST API", "JWT Authentication", "Bcrypt Hashing", "Data Security"],
+    "githubLinks": ["https://github.com/BenLaneSoloDev/BugReporter-Fe", "https://github.com/BenLaneSoloDev/BugReporter-Be"],
+    "liveLink": "https://bug-reporter-six.vercel.app/",
+    "poster": "bug-reporter.webp",
+    "video": "https://youtu.be/APZrOm-NzmA?si=Pj-jPacDGCMp4k1H",
+    "startDate": "2026-08-08T15:57:00.511Z",
+    "endDate": "2026-09-21T11:03:00.511Z"
   }
 ]

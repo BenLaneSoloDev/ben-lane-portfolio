@@ -17,7 +17,7 @@ export default function ProjectFeature({project}: {project: ProjectObj}) {
     title,
     subtitle,
     video,
-    githubLink,
+    githubLinks,
     liveLink,
     status,
     tags
@@ -46,7 +46,8 @@ export default function ProjectFeature({project}: {project: ProjectObj}) {
           loading="lazy"/>
         </div>
         <div className="flex flex-row gap-4 items-center md:justify-center">
-          {githubLink && <Button className={`${buttonStyles["button-s"]} sm:${buttonStyles.button} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={githubLink} target="_blank"></a>}>Github</Button>}
+          {(githubLinks && githubLinks.length > 0) && <Button className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={githubLinks[0]} target="_blank"></a>}>{`Github ${githubLinks.length > 1 ? "(FE)" : ""}`}</Button>}
+          {(githubLinks && githubLinks.length > 1) && <Button className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={githubLinks[1]} target="_blank"></a>}>{`Github (BE)`}</Button>}
           {liveLink && <Button className={`${buttonStyles["button-s"]} sm:${buttonStyles.button} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={liveLink} target="_blank"></a>}>Try It Out</Button>} 
         </div>
       </div>

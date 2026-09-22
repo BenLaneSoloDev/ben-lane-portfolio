@@ -15,7 +15,7 @@ function Project({activeTags, project}: {activeTags: Set<string>, project: Proje
     subtitle,
     briefDescription,
     poster,
-    githubLink,
+    githubLinks,
     liveLink,
     status,
     tags
@@ -27,7 +27,8 @@ function Project({activeTags, project}: {activeTags: Set<string>, project: Proje
     <div className="flex flex-col overflow-hidden w-full md:max-w-112.5 md:w-[45%] items-center rounded-4xl font-light text-def-grey bg-def-white border-4 border-def-orange shadow-md/20">
       <div className="w-full relative">
         <div className="flex flex-col absolute gap-3 bottom-3 right-3">
-          {githubLink && <Button className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={githubLink} target="_blank"></a>}>Github</Button>}
+          {(githubLinks && githubLinks.length > 0) && <Button className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={githubLinks[0]} target="_blank"></a>}>{`Github ${githubLinks.length > 1 ? "(FE)" : ""}`}</Button>}
+          {(githubLinks && githubLinks.length > 1) && <Button className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={githubLinks[1]} target="_blank"></a>}>{`Github (BE)`}</Button>}
           {liveLink && <Button className={`${buttonStyles["button-s"]} ${buttonStyles.highlight} p-5 text-base font-semibold text-def-grey border-def-green border-2`} variant="outline" nativeButton={false} render={<a href={liveLink} target="_blank"></a>}>Try It Out</Button>} 
         </div>
         <img className="object-cover object-center aspect-video h-full w-full" src={getProjectImage(poster)} alt="Project Screenshot"></img>
